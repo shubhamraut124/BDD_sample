@@ -12,28 +12,29 @@ import pageObjects.loginPage;
 
 import java.io.IOException;
 
-public class addToCartStep {
+import static stepDefinations.BaseClass.*;
 
-    WebDriver driver=new ChromeDriver();
+public class addToCartStep extends BaseClass{
+
+  //  WebDriver driver=new ChromeDriver();
     //loginPage lg=new loginPage(driver);
     addToCart add =new addToCart(driver);
-    loginPage lg=new loginPage(driver);
+
 
     public addToCartStep() throws IOException, InterruptedException {
     }
 
 
     @Given("user is on landing page")
-    public void userIsOnLandingPage() throws IOException, InterruptedException {
-        lg.landingPage();
-        lg.passUserNamePwd();
-        lg.clickSUbmit();
-        lg.validateThePage();
+    public void userIsOnLandingPage() throws Throwable {
+        UserOnlandingPage();
+        userUserNamePwd();
+        clicksloginButton();
+
     }
     @When("user clicks on add to cart")
     public void userClicksOnAddToCart() {
-
-     //   add.addProductInCart();
+        add.addProductInCart();
     }
 
     @Then("prodcut shohuld be added in cart")

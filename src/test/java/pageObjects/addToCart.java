@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class addToCart extends loginPage{
 
-    public WebDriver driver;
+  //  public WebDriver driver;
 
 
     @FindBy(how= How.XPATH, using= "//button[@class='btn btn_primary btn_small btn_inventory ' and @id='add-to-cart-sauce-labs-backpack']")
@@ -45,7 +45,8 @@ public class addToCart extends loginPage{
 
     }
     public void checkProdInCart(){
-      Assert.assertTrue(addedProductInCart.isDisplayed());
+
+        Assert.assertTrue(addedProductInCart.isDisplayed());
     }
 
 
